@@ -1,1 +1,1 @@
-# Crypto-Currency-Tracking-App
+# Cryptocurrency-Tracking-App
