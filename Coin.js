@@ -24,9 +24,9 @@ const Coin = ({name, image, symbol, price, volume, priceChange, marketcap}) => {
                     )}
                 </div>
                 <div className='coin-marketcap'>
-                    <span>
-                    ${marketcap} 
-                    </span>
+                     <p>
+                     Market Cap: ${marketcap} 
+                     </p>
                 </div>
             </div>
         </div>
