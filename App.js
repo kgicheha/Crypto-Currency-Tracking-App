@@ -24,7 +24,7 @@ function App() {
 
     
   return (
-    <div className='coin-app'>
+  <div className='coin-app'>
       <div className = 'coin-search'> 
         <h1 className = 'coin-text'> Crypotocurrency Price Tracker</h1>
         <form>
@@ -38,8 +38,9 @@ function App() {
       </div>
     
     
-    
-    <table className='coin-cointainer'>
+  <div className='coin-cointainer'>
+    <table>
+
     <thead className='coin-header'>
       <tr>
         <th>NAME</th>
@@ -51,41 +52,60 @@ function App() {
       </tr>
     </thead>
 
-    <tbody>
+    <tbody className='coin-body'>
 
       {filteredCoins.map(coin => {
       return (
         <tr>
-        <td className='coin'>
-            <img src={coin.image} alt='crypto'/>
-            <h1>{coin.name}</h1>
-        </td>
+        
+          <td className='coin'>
+       
+                <img src={coin.image} alt='crypto'/>
+                <h1>{coin.name}</h1>
+   
+          </td>
+
         <td>
-            <p className='coin-symbol'>{coin.symbol}</p>  
+          <div>
+          <p className='coin-symbol'>{coin.symbol}</p>
+          </div>
         </td>
+        
         <td>
+          <div>
             <p className='coin-price'>${coin.current_price.toLocaleString()}</p>
+          </div>
         </td>
-        <td>
-            <p className='coin-volume'>${coin.total_volume.toLocaleString()}</p>
+
+        <td className='coin-volume'>
+          <div>
+            ${coin.total_volume.toLocaleString()}
+          </div>
         </td>
+
         <td>
+          <div>
             {coin.price_change_percentage_24h < 0 ? (
-            <p className='coin-percent red'>{coin.price_change_percentage_24h.toFixed(2)}%</p>
-            ) : (
-            <p className='coin-percent green'>{coin.price_change_percentage_24h.toFixed(2)}%</p>
+              <p className='coin-percent red'>{coin.price_change_percentage_24h.toFixed(2)}%</p>
+              ) : (
+              <p className='coin-percent green'>{coin.price_change_percentage_24h.toFixed(2)}%</p>
             )}
+          </div>
         </td>
+
         <td>
-            <p> ${coin.market_cap.toLocaleString()}</p>
+          <div>
+          < p> ${coin.market_cap.toLocaleString()}</p>
+          </div>
         </td>
+        
     </tr>     
       )})}              
       </tbody>
   
     </table>
-      
     </div>
+</div>
   );
 }
 
